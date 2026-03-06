@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GII.3RD</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:url("bg.jpg") no-repeat center center fixed;
+background-size:cover;
+animation:bgmove 30s infinite alternate;
+}
+
+/* background movement */
+
+@keyframes bgmove{
+0%{background-position:center top;}
+100%{background-position:center bottom;}
+}
+
+/* BRAND */
+
+.brand{
+text-align:center;
+font-size:90px;
+font-weight:900;
+letter-spacing:8px;
+margin-top:90px;
+color:black;
+opacity:0;
+animation:fadeBrand 2s forwards;
+}
+
+@keyframes fadeBrand{
+to{opacity:1;}
+}
+
+/* PROMO */
+
+.promo{
+max-width:750px;
+margin:40px auto;
+text-align:center;
+font-size:18px;
+line-height:1.9;
+font-weight:700;
+color:black;
+animation:fadeText 3s forwards;
+opacity:0;
+}
+
+@keyframes fadeText{
+to{opacity:1;}
+}
+
+/* GALERI */
+
+.gallery{
+padding:60px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
+}
+
+.grid img{
+width:100%;
+border-radius:20px;
+box-shadow:0 25px 50px rgba(0,0,0,0.25);
+cursor:pointer;
+transition:0.4s;
+}
+
+.grid img:hover{
+transform:scale(1.07);
+box-shadow:0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+.popup img{
+max-width:90%;
+max-height:90%;
+border-radius:18px;
+}
+
+/* ICON */
+
+.icons{
+position:fixed;
+bottom:35px;
+right:30px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.icons a{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:16px;
+font-size:26px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+box-shadow:0 12px 25px rgba(0,0,0,0.3);
+}
+
+.icons a:hover{
+transform:scale(1.1);
+}
+
+.wa{
+background:#25D366;
+}
+
+.ig{
+background:#E1306C;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+.brand{
+font-size:55px;
+letter-spacing:4px;
+}
+
+.promo{
+font-size:16px;
+padding:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="brand">
+GII.3RD
+</div>
+
+
+<div class="promo">
+
+🔥 OPEN CUSTOM T-SHIRT DESIGN 🔥  
+<br><br>
+
+Butuh desain kaos untuk:  
+Tongkrongan • Komunitas • Event  
+Kelas / Angkatan • Brand Clothing  
+<br><br>
+
+Desain bebas request sesuai konsep kamu.  
+Revisi sampai cocok dan file HD siap cetak.  
+<br><br>
+
+Bikin desain kaos kalian jadi lebih beda dan lebih keren.  
+<br><br>
+
+📩 Hubungi melalui WhatsApp atau Instagram.
+
+</div>
+
+
+<section class="gallery">
+
+<div class="grid">
+
+<img src="contoh1.jpg" onclick="openImage(this.src)">
+<img src="contoh2.jpg" onclick="openImage(this.src)">
+<img src="contoh3.jpg" onclick="openImage(this.src)">
+
+</div>
+
+</section>
+
+
+<div class="popup" id="popup" onclick="closeImage()">
+<img id="popupImg">
+</div>
+
+
+<div class="icons">
+
+<a class="wa" href="https://wa.me/6285894085948" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a class="ig" href="https://www.instagram.com/gii.inheree__" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+
+<script>
+
+function openImage(src){
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src=src;
+}
+
+function closeImage(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
